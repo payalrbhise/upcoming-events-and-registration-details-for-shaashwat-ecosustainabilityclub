@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register Yourself</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #0c0c0f;
+            color: rgb(8, 7, 7);
+        }
+
+        .container {
+            width: 90%;
+            max-width: 500px;
+            background: #e5eaf0;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0px 0px 15px rgba(228, 221, 221, 0.1);
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 10px;
+        }
+
+        .tabs {
+            display: flex;
+            justify-content: space-around;
+            margin-bottom: 15px;
+        }
+
+        .tab {
+            cursor: pointer;
+            padding: 10px;
+            width: 50%;
+            text-align: center;
+            background: #4caf50;
+            border-radius: 4px;
+            transition: 0.3s;
+        }
+
+        .tab.active {
+            background: #4caf50;
+        }
+
+        .form {
+            display: none;
+        }
+
+        .form.active {
+            display: block;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        input, textarea {
+            width: 100%;
+            padding: 8px;
+            border: none;
+            border-radius: 4px;
+            background: #ece9e9;
+            color: rgb(10, 8, 8);
+        }
+
+        button {
+            width: 100%;
+            padding: 10px;
+            border: none;
+            background: #053801;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 4px;
+            transition: 0.3s;
+        }
+
+        button:hover {
+            background: #4caf50;
+        }
+
+        .switch {
+            text-align: center;
+            margin-top: 10px;
+        }
+
+        .switch a {
+            color: #4caf50;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h2>Create an Account</h2>
+        <p class="switch">Already have an account? <a href="signup.html">Sign In</a></p>
+
+        <div class="tabs">
+            <div class="tab active" id="volunteer-tab">Student/Faculty</div>
+            <div class="tab" id="organization-tab">Organizer</div>
+        </div>
+
+        <!-- Volunteer Form -->
+        <form class="form active" id="volunteer-form">
+            <div class="form-group">
+                <label for="v-first-name">First Name</label>
+                <input type="text" id="v-first-name" required>
+            </div>
+
+            <div class="form-group">
+                <label for="v-last-name">Last Name</label>
+                <input type="text" id="v-last-name" required>
+            </div>
+
+            <div class="form-group">
+                <label for="v-email">Email</label>
+                <input type="email" id="v-email" required>
+            </div>
+
+            <div class="form-group">
+                <label for="v-password">Password</label>
+                <input type="password" id="v-password" required>
+            </div>
+
+            <button type="Create Account">Create Account</button>
+        </form>
+
+        <!-- Organization Form -->
+        <form class="form" id="organizer-form">
+            <div class="form-group">
+                <label for="o-name">Organizer Name</label>
+                <input type="text" id="o-name" required>
+            </div>
+
+            <div class="form-group">
+                <label for="o-email">Email</label>
+                <input type="email" id="o-email" required>
+            </div>
+
+            <div class="form-group">
+                <label for="o-password">Password</label>
+                <input type="password" id="o-password" required>
+            </div>
+
+            <div class="form-group">
+                <label for="o-website">Past experiences (optional)</label>
+                <input type="url" id="o-website">
+            </div>
+
+            <button type="Create Account">Create Account</button>
+        </form>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const volunteerTab = document.getElementById("Student/Faculty-tab");
+            const organizationTab = document.getElementById("Organizer-tab");
+
+            const volunteerForm = document.getElementById("Student/Faculty-form");
+            const organizationForm = document.getElementById("Organizer-form");
+
+            volunteerTab.addEventListener("click", function () {
+                volunteerTab.classList.add("active");
+                organizationTab.classList.remove("active");
+
+                volunteerForm.classList.add("active");
+                organizationForm.classList.remove("active");
+            });
+
+            organizationTab.addEventListener("click", function () {
+                organizationTab.classList.add("active");
+                volunteerTab.classList.remove("active");
+
+                organizationForm.classList.add("active");
+                volunteerForm.classList.remove("active");
+            });
+
+            const forms = document.querySelectorAll(".form");
+            forms.forEach(form => {
+                form.addEventListener("submit", function (e) {
+                    e.preventDefault();
+                    alert("Account created successfully!");
+                });
+            });
+        });
+    </script>
+
+</body>
+</html>

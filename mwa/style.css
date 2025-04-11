@@ -1,0 +1,122 @@
+/* General Styles */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #0e0d0d;
+    color: #f1eaea;
+  }
+  
+  /* Navigation Bar */
+  .navbar {
+    background-color: #4CAF50;
+    overflow: hidden;
+    padding: 1em;
+  }
+  .navbar a {
+    color: white;
+    text-decoration: none;
+    padding: 12px 20px;
+    display: inline-block;
+  }
+  .navbar a:hover {
+    background-color: #45a049;
+  }
+  
+  /* Header Section */
+  header {
+    background: url('https://via.placeholder.com/1500x400?text=Shaashwat+Club+Events') no-repeat center center/cover;
+    height: 400px;
+    color: rgb(241, 230, 230);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  header h1 {
+    font-size: 3em;
+    margin: 0;
+    /* Changed title text color to black */
+    color: rgb(240, 230, 230);
+  }
+  header p {
+    font-size: 1.2em;
+  }
+  
+  /* Main Container */
+  .container {
+    padding: 2em;
+  }
+  
+  /* Form Styles */
+  form {
+    max-width: 400px;
+    margin: 2em auto;
+    background: rgb(245, 240, 240);
+    padding: 2em;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  }
+  form input[type="text"],
+  form input[type="password"],
+  form input[type="email"],
+  form select {
+    width: 100%;
+    padding: 0.8em;
+    margin: 0.5em 0;
+    border: 1px solid #e7e1e1;
+    border-radius: 3px;
+  }
+  form input[type="submit"],
+  form button {
+    width: 100%;
+    padding: 0.8em;
+    border: none;
+    border-radius: 3px;
+    background-color: #4CAF50;
+    color: white;
+    font-size: 1em;
+    cursor: pointer;
+    margin-top: 1em;
+  }
+  form input[type="submit"]:hover,
+  form button:hover {
+    background-color: #034d06;
+  }
+  
+  /* Dashboard and Card Styles */
+  .dashboard {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2em;
+    margin-top: 2em;
+  }
+  .card {
+    background: rgb(17, 16, 16);
+    padding: 1.5em;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(17, 15, 15, 0.1);
+    text-align: center;
+  }
+  .card h3 {
+    margin-top: 0;
+  }
+  
+  /* Footer */
+  footer {
+    text-align: center;
+    padding: 1em;
+    background-color: #0c0c0c;
+    color: rgb(245, 235, 235);
+    margin-top: 2em;
+  }
+  
+  /* Button Group for Login Page */
+  .btn-group {
+    display: flex;
+    gap: 1em;
+  }
+  .btn-group button {
+    flex: 1;
+  }
+  
